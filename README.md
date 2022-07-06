@@ -13,8 +13,10 @@ $ pip install git+https://github.com/mike-matera/PyScramble.git
 Scramble a Python file: 
 
 ```console 
+$ echo "print('Hello World')" > myfile.py
 $ pyscramble myfile.py 
 $ ./myfile 
+Hello World
 ```
 
 ## Caution 
