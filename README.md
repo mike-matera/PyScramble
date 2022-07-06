@@ -26,3 +26,9 @@ $ ./myfile
 It's easy for an attacker to disassemble the generated files and find the original source because the key is embedded in the executable. Also, since the original source is in process memory, stack dumps from exceptions will show bits of unobfuscated code, which may reveal your secrets. 
 
 This tool is intended to foil attacks with `cat` and `strings`. It won't hold up to much else. 
+
+## Limitations 
+
+1. This is only tested and probably only works on Linux. 
+1. Compiled binaries will only run on the Python interpreter that created them (they are in no way portable). 
+1. The system must have the C compiler and Python headers installed. 
