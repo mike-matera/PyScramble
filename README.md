@@ -2,6 +2,8 @@
 
 A tool to scramble Python scripts. The scrambling obfuscates the source code and strings making it difficult --but not impossible-- for an attacker to see the Python code. Otherwise the script runs like a regular Python executable. 
 
+Scripts compiled this way can be safely made SUID root because there's no race condition when reading the Python code. 
+
 ## Use 
 
 Install the package form this repository: 
