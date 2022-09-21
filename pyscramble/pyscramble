@@ -41,8 +41,13 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Fatal error: cannot decode argv[0]");
         exit(1);
     }}
-    Py_SetProgramName(program);  /* optional but recommended */
-    Py_Initialize();
+
+    Py_SetProgramName(program); 
+    PyConfig config; 
+    PyConfig_InitPythonConfig(&config);
+    PyConfig_SetBytesArgv(&config, argc, argv);
+    Py_InitializeFromConfig(&config);
+
     PyRun_SimpleString(script);
     Py_Finalize();
     PyMem_RawFree(program);
