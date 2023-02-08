@@ -43,10 +43,15 @@ int main(int argc, char *argv[])
     }}
 
     Py_SetProgramName(program); 
+
+#if PY_MINOR_VERSION >= 8
     PyConfig config; 
     PyConfig_InitPythonConfig(&config);
     PyConfig_SetBytesArgv(&config, argc, argv);
     Py_InitializeFromConfig(&config);
+#else
+    Py_Initialize();
+#endif
 
     PyRun_SimpleString(script);
     Py_Finalize();
